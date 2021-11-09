@@ -1,0 +1,49 @@
+<div class="body">
+    <div class="container">
+        <form action="registration" method="POST" [formGroup]="form">
+            <table class="container">
+                <tr class="form-control">
+                    <td> <label for="Email"><span>*</span> E-mail:</label></td>
+                    <td><input formControlName="email" type="email" name="email" id="Email"></td>
+
+                </tr>
+                <tr class="form-control">
+                    <td> <label for="Password"><span>*</span> Password:</label></td>
+                    <td> <input formControlName="password" type="password" name="password" id="Password"></td>
+
+                </tr>
+                <tr class="form-control">
+                    <td> <label for="Password-check"><span>*</span> Confirm Password:</label></td>
+                    <td> <input formControlName="confirm_password" type="password" name="password-check" id="Password-check"></td>
+
+                </tr>
+                <tr class="form-control">
+                    <td> <label for="Nickname"><span>*</span> Nickname:</label></td>
+                    <td> <input formControlName="nickName" type="text" name="nickname" id="Nickname"> </td>
+
+                </tr>
+                <tr class="form-control">
+                    <td> <label for="Phone"><span>*</span> Phone Number:</label></td>
+                    <td> <input type="text" formControlName="phoneNumber" name="Phone-Number" id="Phone" placeholder="+380"></td>
+                </tr>
+                <tr class="form-control">
+                    <td> <label for="Website"><span>*</span> Website:</label></td>
+                    <td><input formControlName="Website" type="text" name="website" id="Website" placeholder="website"></td>
+                </tr>
+                <tr class="check-and-submit">
+                    <td></td>
+                    <td>
+                        <div class="checkbox">
+
+                            <input [checked]="checked" (change)="onChange($event)" type="checkbox" name="checkbox" id="Checkbox">
+                            <label for="Checkbox">I have read the <a href="https://www.google.com/">agreement</a></label>
+                        </div>
+                        <div class="Register">
+                            <button [disabled]="formControlValueChange()" (click)="submit()" id="Register">Register</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
