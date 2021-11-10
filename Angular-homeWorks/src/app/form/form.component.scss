@@ -3,6 +3,21 @@ a {
     color: blue;
 }
 
+#user-list-tag {
+    display: flex;
+    justify-content: flex-end;
+    justify-content: flex-end;
+    width: 80%;
+    p {
+        a {
+            font-size: 18px;
+            color: gray;
+            font-family: sans-serif;
+            text-decoration: none;
+        }
+    }
+}
+
 .body {
     display: flex;
     align-items: center;

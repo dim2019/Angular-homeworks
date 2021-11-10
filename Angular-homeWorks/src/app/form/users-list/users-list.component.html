@@ -1,0 +1,68 @@
+<div class="main-user-list">
+    <div class="header-user-list">
+        <h2>Users Data</h2>
+        <div class="underline"></div>
+    </div>
+    <div class="datas">
+        <div class="table-list" *ngIf="updateValue == 'user-list'">
+            <table #tableuser *ngFor="let user of users; let i = index" class="user">
+                <span>Nickname</span>
+                <div class="data">
+                    <p>{{user.nickName}}</p>
+                    <div class="dataChange">
+                        <button (click)="onClick(user,i)">Update</button>
+                        <button (click)="onDeleteClick(user,i)">Delete</button>
+                    </div>
+                </div>
+                <span>E-mail</span>
+                <div class="data">
+                    <p>{{user.email}}</p>
+                </div>
+                <span>Website</span>
+                <div class="data">
+                    <p>{{user.Website}}</p>
+                </div>
+                <span>password</span>
+                <div class="data">
+                    <p>{{user.password}}</p>
+                </div>
+                <span>Mobile Numbers</span>
+                <div class="data">
+                    <p>{{user.phoneNumber}}</p>
+                </div>
+            </table>
+        </div>
+        <table *ngIf="updateValue == 'update'" class="update-form" [formGroup]="form">
+            <tr class="form-control">
+                <td> <label for="Email"><span>*</span> E-mail:</label></td>
+                <td><input formControlName="email" type="email" name="email" id="Email" [value]="UserDataChange.email"></td>
+            </tr>
+            <tr class="form-control">
+                <td> <label for="Password"><span>*</span> Password:</label></td>
+                <td> <input formControlName="password" type="password" name="password" id="Password"></td>
+
+            </tr>
+            <tr class="form-control">
+                <td> <label for="Password-check"><span>*</span> Confirm Password:</label></td>
+                <td> <input formControlName="confirm_password" type="password" name="password-check" id="Password-check"></td>
+
+            </tr>
+            <tr class="form-control">
+                <td> <label for="Nickname"><span>*</span> Nickname:</label></td>
+                <td> <input formControlName="nickName" type="text" name="nickname" id="Nickname" [value]="UserDataChange.phoneNumber"> </td>
+
+            </tr>
+            <tr class="form-control">
+                <td> <label for="Phone"><span>*</span> Phone Number:</label></td>
+                <td> <input formControlName="phoneNumber" type="text" name="Phone-Number" id="Phone" placeholder="+380" [value]="UserDataChange.nickName"></td>
+            </tr>
+            <tr class="form-control">
+                <td> <label for="Website"><span>*</span> Website:</label></td>
+                <td><input formControlName="Website" type="text" name="website" id="Website" placeholder="website" [value]="UserDataChange.Website"></td>
+            </tr>
+            <tr>
+                <button (click)="onSubmitClick()">Submit</button>
+            </tr>
+        </table>
+    </div>
+</div>

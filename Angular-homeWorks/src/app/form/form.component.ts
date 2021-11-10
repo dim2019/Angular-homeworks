@@ -1,5 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { DataInputService, inputData } from '../data-input-service';
 import { ConfirmedValidator } from './ConfirmedValidator.service';
 
 @Component({
@@ -10,6 +12,7 @@ import { ConfirmedValidator } from './ConfirmedValidator.service';
 
 
 export class FormComponent implements OnInit,OnDestroy {
+  
 
   form: FormGroup = new FormGroup({});
 
@@ -19,13 +22,18 @@ export class FormComponent implements OnInit,OnDestroy {
   protected regexURl = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/
   public checked: boolean
   isChacked: boolean | undefined;
+  public data: inputData
  
 
   
 
-  constructor(private control: FormBuilder) { 
+  constructor(private control: FormBuilder, private router: Router, private element: DataInputService) { 
     this.checked = false
     this.isChacked = undefined
+    this.data = {}
+  }
+  goToPage(pageName: string): void{
+    this.router.navigate([`${pageName}`])    
   }
   get f(){
     return this.form.controls;
@@ -48,10 +56,14 @@ export class FormComponent implements OnInit,OnDestroy {
     this.isChacked = event.target.checked
  }
   submit(){
-    console.log(this.form.value);
-    this.form.reset();
-    this.checked = !this.checked
+    let user = this.form.value
+    Object.assign(this.data,user)
+    this.element.add(this.form.value)
+    /* რესეტი */
+    this.form.reset();  
   }
+
+
   formControlValueChange(){
     if(this.form.get('email')?.invalid || this.form.get('password')?.invalid || this.form.get('confirm_password')?.invalid || this.form.get('nickName')?.invalid || this.form.get('phoneNumber')?.invalid || this.form.get('Website')?.invalid || !this.isChacked){
       return true

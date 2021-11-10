@@ -1,0 +1,133 @@
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.main-user-list {
+    width: 100%;
+    .header-user-list {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        h2 {
+            color: gray;
+            font-family: sans-serif;
+        }
+        .underline {
+            width: 70vw;
+            height: 5px;
+            background: hotpink;
+        }
+    }
+    .datas {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        .table-list {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            .user {
+                margin-top: 5%;
+                margin-left: 50px;
+                width: 450px;
+                height: auto;
+                background: rgb(224, 224, 224);
+                span {
+                    font-size: 12px;
+                    color: blue;
+                }
+                .data {
+                    display: flex;
+                    justify-content: space-between;
+                    p {
+                        margin-top: 5px;
+                    }
+                    .dataChange {
+                        button {
+                            margin-left: 10px;
+                            &:last-child {
+                                width: 50px;
+                                height: 25px;
+                                background: rgb(230, 49, 49);
+                                color: black;
+                                border: 1px solid red;
+                                padding: 0;
+                                font-family: sans-serif;
+                                cursor: pointer;
+                                outline: none;
+                                border-radius: 4px;
+                                &:focus {
+                                    outline: rgb(0, 132, 255) 5px auto;
+                                }
+                                &:hover {
+                                    background: rgb(218, 128, 128);
+                                    ;
+                                }
+                            }
+                            &:first-child {
+                                width: 50px;
+                                height: 25px;
+                                background: rgb(226, 247, 44);
+                                color: black;
+                                border: 1px solid red;
+                                padding: 0;
+                                font-family: sans-serif;
+                                cursor: pointer;
+                                outline: none;
+                                border-radius: 4px;
+                                &:focus {
+                                    outline: rgb(0, 132, 255) 5px auto;
+                                }
+                                &:hover {
+                                    background: rgb(218, 128, 128);
+                                    ;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .update-form {
+        margin-top: 5%;
+    }
+    .container {
+        width: 600px;
+        padding: 30px 40px;
+    }
+    .registration table,
+    tr,
+    td {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-bottom: 25px;
+    }
+    .form-control,
+    td,
+    label,
+    input {
+        .ng-invalid {
+            border: 1px solid red;
+            outline: none;
+        }
+        .ng-valid {
+            border: 1px solid green;
+            outline: none;
+        }
+        // .ng-untouched {
+        //     border: 1px solid #C0C0C0;
+        //     ;
+        //     outline: none;
+        // }
+    }
+    .form-control {
+        input {
+            padding: 5px;
+            width: 320px;
+            border: 1px solid #C0C0C0;
+        }
+    }
+}

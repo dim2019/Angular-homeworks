@@ -1,3 +1,8 @@
+<!-- <div id="user-list-tag">
+    <p>
+        <button (click)="goToPage('users-list')">Users</button>
+    </p>
+</div> -->
 <div class="body">
     <div class="container">
         <form action="registration" method="POST" [formGroup]="form">
@@ -5,7 +10,6 @@
                 <tr class="form-control">
                     <td> <label for="Email"><span>*</span> E-mail:</label></td>
                     <td><input formControlName="email" type="email" name="email" id="Email"></td>
-
                 </tr>
                 <tr class="form-control">
                     <td> <label for="Password"><span>*</span> Password:</label></td>
@@ -47,3 +51,4 @@
         </form>
     </div>
 </div>
+<app-users-list></app-users-list>
