@@ -46,7 +46,7 @@ export class FormComponent implements OnInit,OnDestroy {
       nickName: ['',[Validators.required, Validators.pattern(this.regexNickname)]],
       phoneNumber: ['',[Validators.required, Validators.pattern(this.regexPhoneNumber), Validators.maxLength(13)]],
       Website: ['',[Validators.required, Validators.pattern(this.regexURl)]],
-      Checkbox: [null,[Validators.required]]
+      Checkbox: [false,[Validators.requiredTrue]]
       
   },{
     validator: ConfirmedValidator('password', 'confirm_password')
