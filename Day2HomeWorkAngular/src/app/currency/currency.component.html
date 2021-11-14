@@ -1,0 +1,36 @@
+<div class="main">
+    <div class="header">
+        <p>
+            <span>{{firstInputValue | number}} </span>
+            <span>{{cuarrencyValue1 + " in " + cuarrencyValue2}}</span>
+
+        </p>
+    </div>
+    <div class="container" [formGroup]="form">
+        <div class="row">
+            <div class="first-inp">
+                <input (keyup)="onKeyUpInputOne($event)" formControlName="curencyType1" type="number" placeholder="quantity " [value]="SumFirstInput">
+                <select (change)="activitySelectorForFirstInput($event) " name="currency " id="currency-input1">
+                <option *ngFor="let currency of currencyArray "
+                 [value]="currency" [selected]="currency == 'EUR'">{{currency}}</option>
+            </select>
+            </div>
+            <div class="Error" *ngIf="form.get('curencyType1')?.invalid">
+                <span>Please enter the correct value</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="first-inp ">
+                <input (keyup)="onKeyUpInputTwo($event)" formControlName="curencyType2" type="number" placeholder="quantity" [value]="SumSecondInput">
+                <select (change)="activitySelectorForSecondInput($event) " name="currency " id="currency-input2 ">
+                <option
+                *ngFor="let currency of currencyArray "
+                 [value]="currency" [selected]="currency == 'EUR'">{{currency}}</option>
+            </select>
+            </div>
+            <div class="Error" *ngIf="form.get('curencyType2')?.invalid">
+                <span>Please enter the correct value</span>
+            </div>
+        </div>
+    </div>
+</div>
