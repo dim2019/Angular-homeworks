@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { CurrencyComponent } from './currency/currency.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AddingcurrencyComponent } from './currency/addingcurrency/addingcurrency.component';
 @NgModule({
   declarations: [
     AppComponent,
-    CurrencyComponent
+    CurrencyComponent,
+    AddingcurrencyComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Estonia&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,400;1,500;1,700&family=Yuji+Mai&display=swap');
+p {
+    margin: 0;
+    padding: 0;
+    font-size: 2.5rem;
+    font-family: 'Estonia', cursive;
+    color: black;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+body {
+    background: lightgray;
+}
+
+input {
+    background: initial;
+}
+
+select {
+    background: initial;
+    font-size: 18px;
+    font-weight: 900;
+    font-family: 'Estonia', cursive;
+    color: black;
+    border-radius: 12px;
+    text-align: center;
+    option {
+        background: initial;
+    }
+}

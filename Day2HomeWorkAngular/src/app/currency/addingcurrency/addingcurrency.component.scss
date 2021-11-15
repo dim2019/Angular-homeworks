@@ -1,0 +1,72 @@
+.row {
+    .Error {
+        span {
+            font-size: .7rem;
+            color: red;
+            font-family: 'Roboto', sans-serif;
+        }
+    }
+}
+
+.x {
+    margin: 1.9rem 0 0 17.9rem;
+    --color: #444;
+    --l: 2.5px;
+    /* line-width */
+    width: 9px;
+    height: 9px;
+    background: linear-gradient(to top right, transparent calc(50% - var(--l) / 2), var(--color) calc(50% - var(--l) / 2) calc(50% + var(--l) / 2), transparent calc(50% + var(--l) / 2)), linear-gradient(to bottom right, transparent calc(50% - var(--l) / 2), var(--color) calc(50% - var(--l) / 2) calc(50% + var(--l) / 2), transparent calc(50% + var(--l) / 2));
+    --clip-path: polygon(var(--l) 0%, calc(100% - var(--l)) 0%, 100% var(--l), 100% calc(100% - var(--l)), calc(100% - var(--l)) 100%, var(--l) 100%, 0% calc(100% - var(--l)), 0% var(--l));
+    -webkit-clip-path: var(--clip-path);
+    clip-path: var(--clip-path);
+}
+
+.first-inp {
+    input {
+        width: 200px;
+        height: 30px;
+        margin: 10px 10px 0 0;
+        border-radius: 5px;
+        outline: none;
+        transition: .2s;
+        overflow: scroll;
+        &::placeholder {
+            font-size: 0.7rem;
+            line-height: 1rem;
+            letter-spacing: .2rem;
+            color: black;
+            font-family: 'Roboto', sans-serif;
+        }
+    }
+    .first-inp-inp {
+        .ng-invalid {
+            border: 1px solid red;
+            outline: none;
+        }
+        .ng-valid {
+            border: 1px solid green;
+            outline: none;
+        }
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+    select {
+        width: 80px;
+        height: 34.5px;
+        option {
+            width: 50px;
+            font-size: 0.7rem;
+            line-height: 1rem;
+            letter-spacing: .2rem;
+            color: black;
+            font-family: 'Roboto', sans-serif;
+        }
+    }
+}
