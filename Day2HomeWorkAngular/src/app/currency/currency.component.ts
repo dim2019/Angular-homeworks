@@ -49,7 +49,7 @@ export class CurrencyComponent implements OnInit {
       curencyType2: [this.SumSecondInput,[Validators.pattern(this.regex)]],
       curencyType3: ['',[Validators.pattern(this.regex)]]
     })
-  const data = this.http.get<HTTPdata>('http://api.exchangeratesapi.io/v1/latest?access_key=0bd133321557befa7d2b71da2ffb68a5&format=1&fbclid=IwAR29psA_a2VD4HmECqbJftUM5wxCKbpLYS7CEGyL-0oUTowe9TYDZMdzx3U')
+  const data = this.http.get<HTTPdata>('http://api.exchangeratesapi.io/v1/latest?access_key=5b01ea2b04b9b6252a947d15552ade02&format=1&fbclid=IwAR29psA_a2VD4HmECqbJftUM5wxCKbpLYS7CEGyL-0oUTowe9TYDZMdzx3U')
 
   data
   .subscribe(e=>{
@@ -83,7 +83,7 @@ export class CurrencyComponent implements OnInit {
   }
   activitySelectorForFirstInput(clickedCurrency: any){
     this.cuarrencyValue1 = clickedCurrency.target.value
-    const rateData = this.http.get<HTTPdataBindedRates>(`http://api.exchangeratesapi.io/v1/latest?access_key=0bd133321557befa7d2b71da2ffb68a5&symbols=${this.cuarrencyValue1}&format=1`)    
+    const rateData = this.http.get<HTTPdataBindedRates>(`http://api.exchangeratesapi.io/v1/latest?access_key=5b01ea2b04b9b6252a947d15552ade02&symbols=${this.cuarrencyValue1}&format=1`)    
     rateData.subscribe(e=>{
       let curent = this.cuarrencyValue1   
       let intedValue = e.rates[curent]
@@ -97,7 +97,7 @@ export class CurrencyComponent implements OnInit {
   }
   activitySelectorForSecondInput(clickedCurrency: any){
     this.cuarrencyValue2 = clickedCurrency.target.value
-    const rateData = this.http.get<HTTPdataBindedRates>(`http://api.exchangeratesapi.io/v1/latest?access_key=0bd133321557befa7d2b71da2ffb68a5&symbols=${this.cuarrencyValue2}&format=1`)    
+    const rateData = this.http.get<HTTPdataBindedRates>(`http://api.exchangeratesapi.io/v1/latest?access_key=5b01ea2b04b9b6252a947d15552ade02&symbols=${this.cuarrencyValue2}&format=1`)    
     rateData.subscribe(e=>{
       let curent = this.cuarrencyValue2
       let intedValue = e.rates[curent]
@@ -123,7 +123,7 @@ export class CurrencyComponent implements OnInit {
     })
   }
   activity_Selector_For_Sum(element: any){
-    this.http.get<HTTPdata>('http://api.exchangeratesapi.io/v1/latest?access_key=0bd133321557befa7d2b71da2ffb68a5&format=1&fbclid=IwAR29psA_a2VD4HmECqbJftUM5wxCKbpLYS7CEGyL-0oUTowe9TYDZMdzx3U')
+    this.http.get<HTTPdata>('http://api.exchangeratesapi.io/v1/latest?access_key=5b01ea2b04b9b6252a947d15552ade02&format=1&fbclid=IwAR29psA_a2VD4HmECqbJftUM5wxCKbpLYS7CEGyL-0oUTowe9TYDZMdzx3U')
     .subscribe(e=>{
       this.service.rateData = e
       this.service.BaseCurrency = element.target.value
