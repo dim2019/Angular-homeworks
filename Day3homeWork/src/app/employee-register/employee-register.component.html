@@ -1,0 +1,49 @@
+<!-- Register new Employee and header navigation -->
+
+<nav class="navbar navbar-light" style="background: rgb(86,61,124);">
+    <div class="container-fluid">
+        <h1 style="color: rgb(254,227,132);">register employee</h1>
+        <div class="d-flex">
+            <button (click)="click_add()" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">register new employee</button>
+        </div>
+    </div>
+</nav>
+
+<!-- Employee section goes here -->
+
+<app-employee [EmployeeData]="employeeData" (employee)=update($event)></app-employee>
+
+<!-- Modal section goes here to trigger register new employee-->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Registration new Employee</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+          </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form">
+                    <div class="mb-3">
+                        <label for="exampleInputName" class="form-label">Employee name</label>
+                        <input type="text" class="form-control" id="exampleInputName" aria-describedby="nameHelp" formControlName="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputSalary" class="form-label">Employee Salary</label>
+                        <input type="number" class="form-control" id="exampleInputSalary" aria-describedby="SalaryHelp" formControlName="salary">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputAge" class="form-label">Employee Age</label>
+                        <input type="number" class="form-control" id="exampleInputAge" aria-describedby="AgeHelp" formControlName="age">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="cancel" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button *ngIf="showAdd" (click)="Post_Employees_To_Server()" type="button" class="btn btn-primary" [disabled]="form.invalid">add</button>
+                <button *ngIf="showUpdate" (click)="Update_Employees_To_Server()" type="button" class="btn btn-primary" [disabled]="form.invalid">update</button>
+            </div>
+        </div>
+    </div>
+</div>

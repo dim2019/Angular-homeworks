@@ -1,0 +1,28 @@
+h1 {
+    font-family: 'Estonia', cursive;
+    font-weight: 900;
+    font-size: 72px;
+}
+
+p {
+    font-family: 'Yuji Mai', serif;
+}
+
+button {
+    font-family: 'Roboto', sans-serif;
+}
+
+.modal-body {
+    form {
+        .mb-3 {
+            .ng-invalid {
+                border: 1px solid red;
+                outline: none;
+            }
+            .ng-valid {
+                border: 1px solid green;
+                outline: none;
+            }
+        }
+    }
+}

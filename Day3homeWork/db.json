@@ -1,0 +1,52 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Tiger Nixon",
+      "age": "61",
+      "salary": "320321"
+    },
+    {
+      "id": 2,
+      "name": "Garrett Winters",
+      "age": "53",
+      "salary": "23400"
+    },
+    {
+      "id": 3,
+      "name": "nugzar kvashali",
+      "age": "54",
+      "salary": "12000"
+    },
+    {
+      "id": 4,
+      "name": "vaxtang tatishvili",
+      "age": "58",
+      "salary": "42000"
+    },
+    {
+      "id": 5,
+      "name": "otar kacharava",
+      "age": "55",
+      "salary": "1200"
+    },
+    {
+      "id": 6,
+      "name": "khvicha maglakelidze",
+      "age": "58",
+      "salary": "5200"
+    },
+    {
+      "id": 7,
+      "name": "guram jashi",
+      "age": "72",
+      "salary": "5000"
+    },
+    {
+      "id": 8,
+      "name": "I U M O R I N A",
+      "age": "2045",
+      "salary": "2001"
+    }
+  ]
+}

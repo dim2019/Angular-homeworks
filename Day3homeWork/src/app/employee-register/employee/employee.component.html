@@ -1,0 +1,23 @@
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">Employee Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Age</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of EmployeeData">
+            <td>{{employee.id}}</td>
+            <td>{{employee.name}}</td>
+            <td>${{employee.salary}}</td>
+            <td>{{employee.age}}</td>
+            <td>
+                <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info" (click)="Edit_Employee(employee)">Edit</button>
+                <button (click)=" Delete_Employee(employee)" class="btn btn-danger mx-3">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
