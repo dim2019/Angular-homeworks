@@ -12,6 +12,12 @@ export class EmployeeComponent implements OnInit {
   @Input() EmployeeData: EmployeeModel[] = []
   @Output() employee =  new EventEmitter<EmployeeModel>();
 
+
+  // --- pagination ---//
+  page: number = 1;
+  itemPerPages: number = 8;
+
+
   constructor(private _api: ApiService) { }
 
   ngOnInit(): void {
@@ -22,6 +28,7 @@ export class EmployeeComponent implements OnInit {
     this._api.Get_Data_From_Server()
     .subscribe(res=>{
       this.EmployeeData = res
+      
     })
   }
   Delete_Employee(employee: EmployeeModel){

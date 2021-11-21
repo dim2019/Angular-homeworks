@@ -9,7 +9,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let employee of EmployeeData">
+        <tr *ngFor="let employee of EmployeeData | paginate: {itemsPerPage:itemPerPages,currentPage:page}">
             <td>{{employee.id}}</td>
             <td>{{employee.name}}</td>
             <td>${{employee.salary}}</td>
@@ -20,4 +20,6 @@
             </td>
         </tr>
     </tbody>
+    <pagination-controls class="pagination d-flex justify-content-lg-end" (pageChange)="page = $event">
+    </pagination-controls>
 </table>
