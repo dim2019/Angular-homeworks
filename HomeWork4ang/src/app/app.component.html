@@ -1,1 +1,13 @@
+<nav class="navbar navbar-dark bg-dark" *ngIf="auth.ActivationValue == true">
+    <div class="container">
+
+        <button class="btn btn-warning ">Users</button>
+
+        <div class="users">
+            <a class="navbar-brand" routerLink="/user"><i class="fas fa-users"></i></a>
+        </div>
+        <a class="btn btn-warning" (click)="onLogOut()" routerLink="/">Log Out</a>
+    </div>
+</nav>
+
 <router-outlet></router-outlet>

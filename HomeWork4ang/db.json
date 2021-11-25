@@ -4,7 +4,7 @@
             "name": "simon sanikidze",
             "age": "51",
             "salary": "2250",
-            "username": "1",
+            "email": "1@mail.ru",
             "password": "1"
         },
         {
@@ -12,7 +12,7 @@
             "name": "ertaoz bregvadze",
             "age": "55",
             "salary": "0",
-            "username": "ertaoz",
+            "email": "ertaoz@gmail.com",
             "password": "ertaoz"
         },
         {
@@ -20,7 +20,7 @@
             "name": "inga kvashali",
             "age": "55",
             "salary": "350",
-            "username": "inga",
+            "email": "inga@gmail.com",
             "password": "inga"
         },
         {
@@ -28,7 +28,7 @@
             "name": "giviko melikidze",
             "age": "55",
             "salary": "1200",
-            "username": "giviko",
+            "email": "giviko@gmail.com",
             "password": "giviko"
         },
         {
@@ -36,7 +36,7 @@
             "name": "დიმა მეზვრიშვილი",
             "age": "20",
             "salary": "0",
-            "username": "admin",
+            "email": "admin@gmail.com",
             "password": "admin"
         },
         {
@@ -44,7 +44,7 @@
             "name": "khvicha maglakelidze",
             "age": "58",
             "salary": "5200",
-            "username": "test",
+            "email": "test@gmail.com",
             "password": "test"
         },
         {
@@ -52,7 +52,7 @@
             "name": "guram jashi",
             "age": "72",
             "salary": "5000",
-            "username": "test1",
+            "email": "test1@gmail.com",
             "password": "test1"
         },
         {
@@ -60,7 +60,7 @@
             "name": "Лёша Иванов",
             "age": "32",
             "salary": "2620",
-            "username": "test2",
+            "email": "test2@gmail.com",
             "password": "test2"
         },
         {
@@ -68,7 +68,7 @@
             "name": "კაკო ყაჩაღი",
             "age": "32",
             "salary": "2620",
-            "username": "test2",
+            "email": "test2@gmail.com",
             "password": "test2"
         },
         {
@@ -76,7 +76,7 @@
             "name": "Тёма Смирнов",
             "age": "30",
             "salary": "820",
-            "username": "test3",
+            "email": "test3@gmail.com",
             "password": "test3"
         },
         {
@@ -84,7 +84,7 @@
             "name": "Дима Петров",
             "age": "27",
             "salary": "1200",
-            "username": "test4",
+            "email": "test4@gmail.com",
             "password": "test4"
         },
         {
@@ -92,7 +92,7 @@
             "name": "Лёня Фёдоров",
             "age": "45",
             "salary": "2550",
-            "username": "username",
+            "email": "email@gmail.com",
             "password": "password"
         }
     ]

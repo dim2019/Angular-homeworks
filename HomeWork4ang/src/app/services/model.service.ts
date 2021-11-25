@@ -3,6 +3,6 @@ export class EmployeeModel{
     name: string = '';
     age: string = '';
     salary: string = '';
-    username: string = '';
+    email: string = '';
     password: string = '';
   }

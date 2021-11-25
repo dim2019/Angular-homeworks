@@ -21,7 +21,7 @@ export class AuthService {
     this._http.get<any>("http://localhost:3000/data")
     .subscribe(res =>{
       const user = res.find((params: any)=>{
-        return params.username === form.username && params.password === form.password
+        return params.email === form.email && params.password === form.password
       });
       if(user){
         this.ActivationValue = true

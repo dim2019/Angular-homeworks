@@ -30,7 +30,7 @@ export class UserComponent implements OnInit {
       name: ['',[Validators.required]],
       age: ['',[Validators.required]],
       salary: ['',[Validators.required]],
-      username: ['',[Validators.required]],
+      email: ['',[Validators.required,Validators.email]],
       password: ['',[Validators.required]],
     })
     this.getAllEmploee()
@@ -68,14 +68,14 @@ export class UserComponent implements OnInit {
     this.form.controls['name'].setValue(employee.name)
     this.form.controls['salary'].setValue(employee.salary)
     this.form.controls['age'].setValue(employee.age)
-    this.form.controls['username'].setValue(employee.username)
+    this.form.controls['email'].setValue(employee.email)
     this.form.controls['password'].setValue(employee.password)
   }
   Update_Employees_To_Server(){
     this.employeesOBJ.name = this.form.value.name;
     this.employeesOBJ.salary = `${this.form.value.salary}`;
     this.employeesOBJ.age = `${this.form.value.age}`;
-    this.employeesOBJ.username = `${this.form.value.username}`;
+    this.employeesOBJ.email = `${this.form.value.email}`;
     this.employeesOBJ.password = `${this.form.value.password}`;
     this._api.Update_Data_to_server(this.employeesOBJ,this.employeesOBJ.id).subscribe(res=>{
       let cancel = document.getElementById('cancel')
