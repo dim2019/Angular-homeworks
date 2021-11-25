@@ -1,0 +1,83 @@
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+
+        <button class="btn btn-warning ">Users</button>
+
+        <div class="users">
+            <a class="navbar-brand" routerLink="/user"><i class="fas fa-users"></i></a>
+        </div>
+        <a class="btn btn-warning" (click)="onLogOut()" routerLink="/">Log Out</a>
+    </div>
+</nav>
+
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">Employee Id</th>
+            <th scope="col">name</th>
+            <th scope="col">age</th>
+            <th scope="col">salary</th>
+            <th scope="col">username</th>
+            <th scope="col">password</th>
+            <th scope="col">action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of EmployeeData | paginate: {itemsPerPage:itemPerPages,currentPage:page}">
+            <td>{{employee.id}}</td>
+            <td>{{employee.name}}</td>
+            <td>{{employee.age}}</td>
+            <td>{{employee.salary | number: '1.0'}} GEL</td>
+            <td>{{employee.username}}</td>
+            <td>{{employee.password}}</td>
+            <td>
+                <button [disabled]="!(isActive.username == employee.username && isActive.password == employee.password && isActive.id == employee.id)" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info" (click)="Edit_Employee(employee)">Edit</button>
+                <button [disabled]="!(isActive.username == employee.username && isActive.password == employee.password && isActive.id == employee.id)" (click)=" Delete_Employee(employee)" class="btn btn-danger mx-3">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+    <pagination-controls class="pagination ngx-pagination current  fixed-bottom" (pageChange)="page = $event">
+    </pagination-controls>
+</table>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Registration new Employee</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+          </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form">
+                    <div class="mb-3">
+                        <label for="exampleInputName" class="form-label">Employee name</label>
+                        <input type="text" class="form-control" id="exampleInputName" aria-describedby="nameHelp" formControlName="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputSalary" class="form-label">Employee Salary</label>
+                        <input type="number" class="form-control" id="exampleInputSalary" aria-describedby="SalaryHelp" formControlName="salary">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputAge" class="form-label">Employee Age</label>
+                        <input type="number" class="form-control" id="exampleInputAge" aria-describedby="AgeHelp" formControlName="age">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputAgeUsername" class="form-label">user name</label>
+                        <input type="text" class="form-control" id="exampleInputUsername" aria-describedby="UsernameHelp" formControlName="username">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword" class="form-label">password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword" aria-describedby="PasswordHelp" formControlName="password">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="cancel" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button (click)="Update_Employees_To_Server()" type="button" class="btn btn-primary" [disabled]="form.invalid">update</button>
+            </div>
+        </div>
+    </div>
+</div>

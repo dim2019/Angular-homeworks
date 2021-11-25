@@ -1,0 +1,35 @@
+.users {
+    height: 70px;
+    a {
+        display: flex;
+        align-items: flex-end;
+        margin-top: 10px;
+        i {
+            font-size: 2rem;
+        }
+    }
+}
+
+.pagination ::ng-deep .ngx-pagination .current {
+    background: red;
+}
+
+form {
+    .ng-invalid {
+        border: 1px solid red;
+        outline: none;
+    }
+    .ng-valid {
+        border: 1px solid green;
+        outline: none;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+}
