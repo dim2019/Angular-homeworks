@@ -9,5 +9,8 @@
         <a class="btn btn-warning" (click)="onLogOut()" routerLink="/">Log Out</a>
     </div>
 </nav>
+<div class="loader-container" *ngIf="load.isLoading | async">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
 
 <router-outlet></router-outlet>

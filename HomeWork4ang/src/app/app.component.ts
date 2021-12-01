@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from './services/api.service';
 import { AuthService } from './services/auth.service';
+import { LoaderService } from './services/loader.service';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ export class AppComponent {
   isActive: any;
   EmployeeData: any;
 
-  constructor(public auth: AuthService, private _api: ApiService){}
+  constructor(public auth: AuthService, private _api: ApiService, public load: LoaderService){}
   
   onLogOut(){
     this.auth.ActivationValue = false

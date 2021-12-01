@@ -13,20 +13,24 @@ export class LoginComponent implements OnInit {
 
   alertForWrongInput: boolean = false
 
+
   constructor(private fb: FormBuilder, private auth: AuthService) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
       email: ['',[Validators.required,Validators.email]],
       password: ['',[Validators.required]]
-    })
+    })    
   }
   onSubmit(){
    if(this.form.valid){
     this.auth.login(this.form.value)
-    if(!this.auth.ActivationValue){
-      this.alertForWrongInput = true
-    }
+    this.auth.getValue
+    .subscribe(res=>{
+      if(!res){
+        this.alertForWrongInput = true
+      }
+    })
     this.form.reset()
    }else{
     

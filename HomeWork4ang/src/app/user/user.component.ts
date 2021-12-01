@@ -1,3 +1,4 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, EventEmitter, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -8,7 +9,15 @@ import { EmployeeModel } from '../services/model.service';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.scss']
+  styleUrls: ['./user.component.scss'],
+  animations: [
+    trigger('clear_user',[
+      state('void', style({
+        opacity: 0
+      })),
+      transition('void => *',animate(500))
+    ])
+  ]
 })
 export class UserComponent implements OnInit {
 
@@ -19,6 +28,8 @@ export class UserComponent implements OnInit {
     // --- pagination ---//
   page: number = 1;
   itemPerPages: number = 8;
+
+  deleteEMP: any
 
   public form: FormGroup = new FormGroup({})
   private employeesOBJ: EmployeeModel = new EmployeeModel();
@@ -35,11 +46,6 @@ export class UserComponent implements OnInit {
     })
     this.getAllEmploee()
   }
-  onLogOut(){
-    this.auth.ActivationValue = false
-    this.getAllEmploee()
-  }
-
 
   getAllEmploee(){
     this._api.Get_Data_From_Server()
@@ -50,18 +56,22 @@ export class UserComponent implements OnInit {
     })
   }
   Delete_Employee(employee: EmployeeModel){
-    var answer =  confirm(`Are you sure you want to continue?`)
-    if(answer){
-      this._api.Delete_Data_To_Server(employee.id)
+    this.deleteEMP = employee
+  }
+  
+  delete(){ 
+      this._api.Delete_Data_To_Server(this.deleteEMP.id)
       .subscribe(res=>{
         this.getAllEmploee()
+        let dismiss = document.getElementById('dismiss')
+        dismiss?.click();
+        this.auth.ActivationValue = false
+        this.route.navigate(['login'])
       })
-      this.auth.ActivationValue = false
-      this.route.navigate(['login'])
+     
 
 
-    }
-
+    
   }
   Edit_Employee(employee: EmployeeModel){
     this.employeesOBJ.id = employee.id

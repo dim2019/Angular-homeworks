@@ -21,3 +21,37 @@ form {
         -moz-appearance: textfield;
     }
 }
+
+.delete {
+    background: initial;
+    border: none;
+    i {
+        font-size: 1.3rem;
+        color: red;
+    }
+}
+
+.edit {
+    background: initial;
+    border: none;
+    i {
+        font-size: 1.3rem;
+        color: black;
+    }
+}
+
+tbody {
+    tr {
+        td {
+            &:nth-child(3),
+            &:nth-child(4) {
+                p {
+                    font-family: 'Estonia', cursive;
+                    font-weight: 900;
+                    color: yellowgreen;
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+}

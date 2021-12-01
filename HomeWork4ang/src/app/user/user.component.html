@@ -12,16 +12,28 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let employee of EmployeeData | paginate: {itemsPerPage:itemPerPages,currentPage:page}">
-            <td>{{employee.id}}</td>
-            <td>{{employee.name}}</td>
-            <td>{{employee.age}}</td>
-            <td>{{employee.salary | number: '1.0'}} GEL</td>
-            <td>{{employee.email}}</td>
-            <td>{{employee.password}}</td>
+        <tr *ngFor="let employee of EmployeeData | paginate: {itemsPerPage:itemPerPages,currentPage:page}" [@clear_user]>
             <td>
-                <button [disabled]="!(isActive.email == employee.email && isActive.password == employee.password && isActive.id == employee.id)" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info" (click)="Edit_Employee(employee)">Edit</button>
-                <button [disabled]="!(isActive.email == employee.email && isActive.password == employee.password && isActive.id == employee.id)" (click)=" Delete_Employee(employee)" class="btn btn-danger mx-3">Delete</button>
+                <p>{{employee.id}}</p>
+            </td>
+            <td>
+                <p>{{employee.name}}</p>
+            </td>
+            <td>
+                <p>{{employee.age}}</p>
+            </td>
+            <td>
+                <p>{{employee.salary | number: '1.0'}} GEL</p>
+            </td>
+            <td>
+                <p>{{employee.email}}</p>
+            </td>
+            <td>
+                <p>{{employee.password}}</p>
+            </td>
+            <td>
+                <button *ngIf="isActive.email == employee.email && isActive.password == employee.password && isActive.id == employee.id" data-bs-toggle="modal" data-bs-target="#exampleModal" class="edit" (click)="Edit_Employee(employee)"><i class="fas fa-user-edit"></i></button>
+                <button *ngIf="isActive.email == employee.email && isActive.password == employee.password && isActive.id == employee.id" (click)=" Delete_Employee(employee)" data-bs-toggle="modal" data-bs-target="#DeleteModal" class="delete mx-3"><i class="fas fa-trash"></i></button>
             </td>
         </tr>
     </tbody>
@@ -33,7 +45,6 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Registration new Employee</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
           </button>
             </div>
@@ -63,7 +74,27 @@
             </div>
             <div class="modal-footer">
                 <button id="cancel" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button (click)="Update_Employees_To_Server()" type="button" class="btn btn-primary" [disabled]="form.invalid">update</button>
+                <button (click)="Update_Employees_To_Server()" type="button" class="btn btn-warning" [disabled]="form.invalid">update</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="DeleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+          </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    Are you sure want to remove user ?
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="dismiss" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button (click)="delete()" id="agree" type="button" class="btn btn-danger">Delete</button>
             </div>
         </div>
     </div>
