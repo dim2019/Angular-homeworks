@@ -95,9 +95,10 @@ export class UserComponent implements OnInit {
         this.EmployeeData = response
       })
       this.form.reset(); 
-      alert('წარმატებით განახლდა ინფორმაცია, გთხოვთ თავიდან გაიაროთ ავტორიცაზია !') 
-      this.auth.ActivationValue = false
-      this.route.navigate(['/'])
+      this.isActive = res
+      // alert('წარმატებით განახლდა ინფორმაცია, გთხოვთ თავიდან გაიაროთ ავტორიცაზია !') 
+      // this.auth.ActivationValue = false
+      // this.route.navigate(['/'])
 
       
     })

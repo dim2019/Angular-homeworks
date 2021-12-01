@@ -5,7 +5,7 @@
       "name": "simon sanikidze",
       "age": "51",
       "salary": "2250",
-      "email": "1@mail.ru",
+      "email": "1@gmail.com",
       "password": "1"
     },
     {
@@ -87,14 +87,6 @@
       "salary": "1200",
       "email": "test4@gmail.com",
       "password": "test4"
-    },
-    {
-      "id": 12,
-      "name": "Лёня Фёдоров",
-      "age": "45",
-      "salary": "2550",
-      "email": "email@gmail.com",
-      "password": "password"
     }
   ]
 }
