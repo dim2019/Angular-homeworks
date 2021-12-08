@@ -16,8 +16,23 @@ import { EmployeeModel } from '../services/model.service';
         opacity: 0
       })),
       transition('void => *',animate(500))
+    ]),
+    trigger('showArrow',
+    [            
+        state('*', style({opacity: 0})),
+        state('in', style({opacity: 1})),
+        state('out', style({opacity: 0})),
+
+        transition('* => in', [
+           animate(1000)    
+        ]),
+
+        transition('* => out', [
+            animate(1000)
+        ])
     ])
-  ]
+  ],
+  
 })
 export class UserComponent implements OnInit {
 
@@ -30,6 +45,7 @@ export class UserComponent implements OnInit {
   itemPerPages: number = 8;
 
   deleteEMP: any
+  showArrow: boolean = false
 
   public form: FormGroup = new FormGroup({})
   private employeesOBJ: EmployeeModel = new EmployeeModel();
@@ -57,6 +73,7 @@ export class UserComponent implements OnInit {
   }
   Delete_Employee(employee: EmployeeModel){
     this.deleteEMP = employee
+    this.showArrow = true
   }
   
   delete(){ 
